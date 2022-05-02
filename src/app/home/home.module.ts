@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
@@ -16,6 +16,7 @@ import { HomeRoutingModule } from './home-routing.module';
   ],
   providers: [
     HomeAuthResolver
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeModule {}

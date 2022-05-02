@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   };
   tags: Array<string> = [];
   tagsLoaded = false;
+  labelButton = 'Default';
 
   ngOnInit() {
     this.userService.isAuthenticated.subscribe(
@@ -53,5 +54,10 @@ export class HomeComponent implements OnInit {
 
     // Otherwise, set the list object
     this.listConfig = {type: type, filters: filters};
+  }
+
+  setLabelName(event: Event): void {
+    const { detail } = (event as CustomEvent)
+    this.labelButton = detail
   }
 }
